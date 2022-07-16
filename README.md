@@ -5,7 +5,7 @@ This idea didn't work. Tried to follow the [tensorflow instructions](https://www
 
 ## CMake Build Error
 
-'''
+```
 CMake Warning at build/abseil-cpp/CMakeLists.txt:74 (message):
   A future Abseil release will default ABSL_PROPAGATE_CXX_STD to ON for CMake
   3.8 and up.  We recommend enabling this option to ensure your project still
@@ -38,4 +38,4 @@ Call Stack (most recent call first):
 
 -- Configuring incomplete, errors occurred!
 cmake failed with exit code 1
-'''
+```
