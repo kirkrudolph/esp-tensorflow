@@ -5,4 +5,13 @@
 cmake_minimum_required(VERSION 3.5)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(esp-tensorflow)
+project(esp-tensorflow C CXX)
+
+set(TENSORFLOW_SOURCE_DIR "tensorflow" CACHE PATH
+  "Directory that contains the TensorFlow project" )
+
+add_subdirectory(
+    "${TENSORFLOW_SOURCE_DIR}/tensorflow/lite"
+    "${CMAKE_CURRENT_BINARY_DIR}/tensorflow-lite" EXCLUDE_FROM_ALL)
+
+target_link_libraries(esp-tensorflow tensorflow-lite)
